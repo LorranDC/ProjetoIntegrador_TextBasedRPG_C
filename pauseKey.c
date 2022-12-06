@@ -5,7 +5,7 @@
 	{
 		int select;
 
-		printf(" - - - - - entre com o valor 1 para continuar . . . - - - - -\n>");
+		printf(" - - - - - - - - - - - - - - - - - - - - - - - ENTRE COM O VALOR 1 PARA CONTINUAR . . . . . . - - - - - - - - - - - - - - - - - - - - \n>");
         scanf(" %i", &select);
 
 		if(select != 1)
