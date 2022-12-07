@@ -13,4 +13,10 @@
 		char name[10];
 	}Witch;
 
+	typedef struct
+	{
+		int hp, atk;
+		char name[101]
+	}Albeboss;
+
 #endif
