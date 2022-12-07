@@ -45,7 +45,7 @@ int main()
 	pauseKey();
 
 	printImage(fopen("images/cave.txt", "r\n"));
-	printf("->Você encontrou a entrada de uma caverna\n");
+	printf("->Você encontrou a entrada de uma caverna\n\n");
 	printf("- - - - - - - - - - - - - - Entre com o valor 1 para explorar ou entre com o valor 2 para seguir em frente - - - - - - - - - - - - -\n>");
 	scanf(" %i", &choice);
 
@@ -64,7 +64,7 @@ int main()
 		break;
 	}
 			
-	printf("->Seguindo a trilha . . .\n");
+	printf("->Seguindo a trilha . . .\n\n");
 	sleep(3);
 
 	clearScreen();
@@ -73,14 +73,19 @@ int main()
 	printf("%s>Eu preciso de respostas!!! Aquele Ancião pode estar me esperando naquela cabana!!! Ou seja lá o que está à minha espera...\n", playerName);
 	pauseKey();
 
-	printf("->Caminhando até a cabana . . .\n");
+	printf("->Caminhando até a cabana . . .\n\n");
 	sleep(3);
 
 	printf("%s>Bom, é melhor entrar logo\n", playerName);
 	pauseKey();
 	printf("->Entrando na cabana . . .\n\n");
 	sleep(3);
-	elfDialogue();	
+	elfDialogue();
+	clearScreen();	
+
+	player.potion += 1;
+	printImage(fopen("images/potionBottle.txt", "r\n"));
+	printf("->");
 
 
 	return 0;

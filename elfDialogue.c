@@ -8,6 +8,7 @@
 		printf("%s>Meu Deus... QUE CHEIRO HORRÍVEL\n\n", playerName);
 		sleep(2);		
 		printf("%s>Com certeza tem algo morto aqui...\n\n", playerName);
+		sleep(2);
 		pauseKey();
 		clearScreen();
 
@@ -65,14 +66,58 @@
 				continue;
 			}
 
-						
+			printf("A manipulação de dados em arquivos difere um pouco conforme o tipo de arquivo. Diante dessa afirmação, assinale a alternativa falsa.\n\n");
+			printf("1-Nos arquivos do tipo texto ou binário, após a execução de um comando de leitura ou de escrita, o apontador do arquivo se posiciona após o registro lido ou gravado.\n");
+			printf("2-A unidade básica de manipulação de arquivos de texto é o caractere.\n");
+			printf("3-Arquivos do tipo binário podem ser utilizados para compartilhar informações entre sistemas desenvolvidos em diferentes linguagens de programação.\n>");
+			scanf(" %i", &choice);
+			
+			if(choice != 2)
+			{
+				i = -1;
+				break;
+			}
+			else
+			{
+				continue;
+			}
+			
+			printf("Sobre a organização das informações em um arquivo, é correto afirmar que:\n\n");
+			printf("1-Arquivos do tipo binário são arquivos nos quais somente é possível fazer o acesso sequencial.\n");
+			printf("2-O acesso direto (randômico) significa que cada registro é acessado somente depois de acessar o anterior.\n");	
+			printf("3-Arquivos são semelhantes aos vetores, pois cada registro do arquivo é semelhante a uma posição de um vetor.\n>");
+			scanf(" %i", &choice);
+			
+			if(choice != 3)
+			{
+				i = -1;
+				break;
+			}
+			else
+			{
+				continue;
+			}
+		break;
+			
 		}
 
 		if(i == -1)
 		{
-			printf("Você errou!!!!!\n");
-			pauseKey();
+			int select;
+			clearScreen();
+			printImage(fopen("images/playerError.txt", "r\n"));
+			printf(" Deseja tentar novamente ou sair do jogo?\n\n");
+			printf(" - - - - - - - - - - entre com o valor 1 para tentar novamente ou entre com o valor 2 para sair do jogo . . . - - - - - - - - - -\n>");
+        	scanf(" %i", &select);
+			
+			if(select == 1)
+			{
+				clearScreen();
+				elfDialogue();
+			}
+			else
+			{
+				exit(0);
+			}
 		}
-
-
 	}
