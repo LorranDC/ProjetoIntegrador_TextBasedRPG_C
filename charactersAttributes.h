@@ -16,7 +16,7 @@
 	typedef struct
 	{
 		int hp, atk;
-		char name[101]
+		char name[10];
 	}Albeboss;
 
 #endif

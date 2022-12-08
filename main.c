@@ -21,6 +21,7 @@ void albebossBattle(struct Player player1);
 
 int main()
 {
+	fseek(stdin,0,SEEK_END);
 	int choice;
 	
 	player.hp		= 100;
@@ -43,11 +44,11 @@ int main()
 
 	clearScreen();
 	printImage(fopen("images/jungle.txt", "r\n"));
-	printf("->Você acorda em um lugar desconhecido, aparentemente uma selva de mata muito fechada\n\n");
+	printf(" -Você acorda em um lugar desconhecido, aparentemente uma selva de mata muito fechada\n\n");
 	pauseKey();
 
 	printImage(fopen("images/cave.txt", "r\n"));
-	printf("->Você encontrou a entrada de uma caverna\n\n");
+	printf(" -Você encontrou a entrada de uma caverna\n\n");
 	printf("- - - - - - - - - - - - - - Entre com o valor 1 para explorar ou entre com o valor 2 para seguir em frente - - - - - - - - - - - - -\n>");
 	scanf(" %i", &choice);
 
@@ -58,7 +59,7 @@ int main()
 		player.atk += 50;
 		clearScreen();
 		printImage(fopen("images/dagger.txt", "r\n"));
-		printf("\n->Wooow! Você conseguiu a adaga usada pelo ORC! Portanto foi acrescentado 50 pontos de ataque ao seu personagem, agora você possui %d pontos de ataque!\n\n", player.atk);
+		printf("\n -Wooow! Você conseguiu a adaga usada pelo ORC! Portanto foi acrescentado 50 pontos de ataque ao seu personagem, agora você possui %d pontos de ataque!\n\n", player.atk);
 		pauseKey();
 		break;
 
@@ -66,30 +67,30 @@ int main()
 		break;
 	}
 			
-	printf("->Seguindo a trilha . . .\n\n");
+	printf(" -Seguindo a trilha . . .\n\n");
 	sleep(3);
 
 	clearScreen();
 	printImage(fopen("images/witchHut.txt", "r\n"));
-	printf("->Ao longe você avista o que supostamente é a cabana de uma bruxa\n\n");
-	printf("%s>Eu preciso de respostas!!! Aquele Ancião pode estar me esperando naquela cabana!!! Ou seja lá o que está à minha espera...\n", playerName);
+	printf(" -Ao longe você avista o que supostamente é a cabana de uma bruxa\n\n");
+	printf("%s> Eu preciso de respostas!!! Aquele Ancião pode estar me esperando naquela cabana!!! Ou seja lá o que está à minha espera...\n", playerName);
 	pauseKey();
 
-	printf("->Caminhando até a cabana . . .\n\n");
+	printf(" -Caminhando até a cabana . . .\n\n");
 	sleep(3);
 
-	printf("%s>Bom, é melhor entrar logo\n", playerName);
+	printf("%s> Bom, é melhor entrar logo\n", playerName);
 	pauseKey();
-	printf("->Entrando na cabana . . .\n\n");
+	printf(" -Entrando na cabana . . .\n\n");
 	sleep(3);
 	elfDialogue();
 	clearScreen();	
 
 	player.potion += 1;
 	printImage(fopen("images/potionBottle.txt", "r\n"));
-	printf("->Muito bem!!! Você conseguiu %d poção(ões) de cura. Agora você tem o direito de restaurar 100% dos seus pontos de vida!!!", player.potion);
-
-	printf("%s>Ué, pra onde aquela coisa foi? Bem, não importa vou sair logo daqui...", playerName);
+	printf(" -Muito bem!!! Você conseguiu %d poção(ões) de cura. Agora você tem o direito de restaurar cem porcento dos seus pontos de vida!!!\n", player.potion);
+	pauseKey();
+	printf("%s> Ué, pra onde aquela coisa foi? Bem, não importa vou sair logo daqui...\n", playerName);
 	pauseKey();
 	witchBattle(player);
 	clearScreen();
@@ -97,7 +98,7 @@ int main()
 	clearScreen();
 
 	printImage(fopen("images/oldMan.txt", "r\n"));
-	printf(Ancião> WOOOOOOOOOOOOOOOWWWW!!! Hahahahahahahahahahahahaha... Isso é o que eu chamo de quebra da quarta parede...\n\n);
+	printf("Ancião> WOOOOOOOOOOOOOOOWWWW!!! Hahahahahahahahahahahahaha... Isso é o que eu chamo de quebra da quarta parede...\n\n");
 	sleep(2);
 	printf("%s> EEEEEEEEIIIIIIIIIII! COMO VOCÊ PÔDE APARECER SÓ AGORA???!!!\n\n", playerName);
 	sleep(2);
@@ -111,9 +112,9 @@ int main()
 	sleep(2);
 	printf("%s> Estou sem entender até agora... Qual era de fato essa tal missão?\n\n", playerName);
 	sleep(2);
-	printf("Ancião> Você ajudou o Lorran a concluir seu trabalho de Projeto Integrador referente ao segundo período do curso de Ciência da Computação no UNIS-Varginha!!!");
+	printf("Ancião> Você ajudou o Lorran a concluir seu trabalho de Projeto Integrador referente ao segundo período do curso de Ciência da Computação no UNIS-Varginha!!!\n\n");
 	sleep(2);
-	printf("%s> Eu passo por tudo isso a fim de obter respostas... E O QUE EU RECEBO NO FIM SÃO PERGUNTAS E MAIS PERGUNTAS???!!! Quem é esse Lorran? O que é Projeto Integrador? O que é esse tal de curso de Ciência da Computação nesse tal de UNIS-Varginha?\n\n");
+	printf("%s> Eu passo por tudo isso a fim de obter respostas... E O QUE EU RECEBO NO FIM SÃO PERGUNTAS E MAIS PERGUNTAS???!!! Quem é esse Lorran? O que é Projeto Integrador? O que é esse tal de curso de Ciência da Computação nesse tal de UNIS-Varginha?\n\n", playerName);
 	sleep(2);
 	printf("Ancião> É uma looooonga história... Mas o que importa é que você conseguiu... Mas não precisa se alterar! Você terá a sua recompensa.\n\n");
 	sleep(2);
@@ -122,7 +123,7 @@ int main()
 	printImage(fopen("images/coke.txt", "r\n"));
 	printf("Ancião> Aqui está... Uma Coquinha Gelada...\n\n");
 	sleep(2);
-	printf("%s> O que é isso?\n\n");
+	printf("%s> O que é isso?\n\n", playerName);
 	sleep(2);
 	printf("Ancião> Ahhhhh rapaz...\n\n");
 	sleep(2);
@@ -132,13 +133,14 @@ int main()
 	sleep(2);
 	printf("Ancião> Uma verdadeira dádiva divina...\n\n");
 	sleep(2);
-	printf("%s> Como e de onde você tirou algo tão especial assim?\n\n");
+	printf("%s> Como e de onde você tirou algo tão especial assim?\n\n", playerName);
 	sleep(2);
 	printf("Ancião> Você não acha que faz perguntas demais? Apenas... Desfrute...\n");
 	sleep(2);
 	pauseKey();
 	clearScreen();
 	printImage(fopen("images/endGame.txt", "r\n"));
+	printf("\n\n");
 
 
 	return 0;
@@ -147,6 +149,7 @@ int main()
 
 void caveBattle(struct Player player1)
 	{
+		fseek(stdin,0,SEEK_END);
 		Orc		orc;
 		int		battleChoice = 0;
 		int		init = 1;
@@ -273,8 +276,8 @@ void caveBattle(struct Player player1)
 		{
 			int select;
 			printImage(fopen("images/deathSkull.txt", "r\n"));
-			printf(" Você morreu!\n\n");
-			printf(" Deseja tentar novamente ou sair do jogo?\n\n");
+			printf(" -Você morreu!\n\n");
+			printf(" -Deseja tentar novamente ou sair do jogo?\n\n");
 			printf(" - - - - - entre com o valor 1 para tentar novamente ou entre com o valor 2 para sair do jogo . . . - - - - -\n>");
         	scanf(" %i", &select);
 			
@@ -289,13 +292,14 @@ void caveBattle(struct Player player1)
 		}
 		else
 		{	
-			printf(" Muito bem!!! Você o derrotou!!!\n\n");
+			printf(" -Muito bem!!! Você o derrotou!!!\n\n");
 			pauseKey();	
 		}
 	}
 
 	void witchBattle(struct Player player1)
 	{
+		fseek(stdin,0,SEEK_END);
 		Witch		witch;
 		int		battleChoice = 0;
 		int		init = 1;
@@ -348,12 +352,10 @@ void caveBattle(struct Player player1)
 				printf(" Valor Inválido!\n");	
 			}
 
-			if(player.hp || orc.hp <= 0)
-			{
 				if(player.hp <= 0)
 				{
 					int choice;
-					printf("Você deseja usar a sua poção de cura\n");
+					printf(" -Você deseja usar a sua poção de cura\n");
 					printf(" - - - - - entre com o valor 1 para usar ou entre com o valor 2 caso não queira . . . - - - - -\n>");
 					scanf(" %i", &choice);
 					if(choice == 1)
@@ -365,11 +367,6 @@ void caveBattle(struct Player player1)
 						break;
 					}
 				}
-				else
-				{
-				break;
-				}
-			}
 
 			printf(" Qual é a principal característica de uma árvore binária completa?\n\n");
 			printf(" 1-Possuir todas folhas no mesmo nível.\n");
@@ -402,12 +399,15 @@ void caveBattle(struct Player player1)
 				printf(" Valor Inválido!\n");	
 			}
 
-			if(player.hp || orc.hp <= 0)
-			{
+				if(witch.hp <= 0)
+				{
+					break;
+				}			
+
 				if(player.hp <= 0)
 				{
 					int choice;
-					printf("Você deseja usar a sua poção de cura\n");
+					printf(" Você deseja usar a sua poção de cura?\n");
 					printf(" - - - - - entre com o valor 1 para usar ou entre com o valor 2 caso não queira . . . - - - - -\n>");
 					scanf(" %i", &choice);
 					if(choice == 1)
@@ -419,11 +419,6 @@ void caveBattle(struct Player player1)
 						break;
 					}
 				}
-				else
-				{
-				break;
-				}
-			}
 
 			printf(" Qual o principal objetivo da organização de dados em estruturas de árvores de busca binária?\n\n");
 			printf(" 1-Facilitar a busca de um determinado valor.\n");
@@ -461,8 +456,8 @@ void caveBattle(struct Player player1)
 		{
 			int select;
 			printImage(fopen("images/deathSkull.txt", "r\n"));
-			printf(" Você morreu!\n\n");
-			printf(" Deseja tentar novamente ou sair do jogo?\n\n");
+			printf(" -Você morreu!\n\n");
+			printf(" -Deseja tentar novamente ou sair do jogo?\n\n");
 			printf(" - - - - - entre com o valor 1 para tentar novamente ou entre com o valor 2 para sair do jogo . . . - - - - -\n>");
         	scanf(" %i", &select);
 			
@@ -477,18 +472,20 @@ void caveBattle(struct Player player1)
 		}
 		else
 		{	
-			printf(" Muito bem!!! Você a derrotou!!!\n\n");
+			printf(" -Muito bem!!! Você a derrotou!!!\n\n");
 			pauseKey();	
 		}
 	}
 
+
 	void albebossBattle(struct Player player1)
 	{
+		fseek(stdin,0,SEEK_END);
 		Albeboss		albeboss;
 		int			battleChoice = 0;
 		int			init = 1;
 		albeboss.hp		= 200;
-		albeboss.atk	= 999;
+		albeboss.atk	= 900;
 
 		strcpy(albeboss.name, "ALBEBOSS");
 
@@ -499,7 +496,7 @@ void caveBattle(struct Player player1)
 		sleep(2);
 		printf("%s> DO QUE VOCÊ ESTÁ FALANDO? EU NEM SEI QUEM É VOCÊ OU O QUE É VOCÊ\n\n", playerName);
 		sleep(2);
-		printf("%s> Se bem que você me parece tão... Diferente... Você não é desse lugar...");
+		printf("%s> Se bem que você me parece tão... Diferente... Você não é desse lugar...\n\n", playerName);
 		sleep(2);
 		printf("%s> ISSO NÃO É DA SUA CONTA!!! NÃO ME IMPORTA O QUE VOCÊ PENSA QUE SOU!!! Mas você com certeza saberá do que sou capaz... \n\n", albeboss.name);
 		sleep(2);
@@ -558,7 +555,7 @@ void caveBattle(struct Player player1)
 				case 2:
 				albeboss.hp -= player.atk;
 				printf(" Você desferiu -%d de dano em %s!\n\n", player.atk, albeboss.name);
-				printf(" Agora ele tem %d pontos de vida!\n\n", orc.hp);
+				printf(" Agora ele tem %d pontos de vida!\n\n", albeboss.hp);
 				break;
 
 				case 3:
@@ -586,7 +583,7 @@ void caveBattle(struct Player player1)
 				case 1:
 				albeboss.hp -= player.atk;
 				printf(" Você desferiu -%d de dano em %s!\n\n", player.atk, albeboss.name);
-				printf(" Agora ele tem %d pontos de vida!\n\n", orc.hp);
+				printf(" Agora ele tem %d pontos de vida!\n\n", albeboss.hp);
 				break;
 
 				case 2:
@@ -611,8 +608,8 @@ void caveBattle(struct Player player1)
 		{
 			int select;
 			printImage(fopen("images/deathSkull.txt", "r\n"));
-			printf(" ->Você morreu!\n\n");
-			printf(" ->Deseja tentar novamente ou sair do jogo?\n\n");
+			printf(" -Você morreu!\n\n");
+			printf(" -Deseja tentar novamente ou sair do jogo?\n\n");
 			printf(" - - - - - entre com o valor 1 para tentar novamente ou entre com o valor 2 para sair do jogo . . . - - - - -\n>");
         		scanf(" %i", &select);
 			
@@ -627,8 +624,8 @@ void caveBattle(struct Player player1)
 		}
 		else
 		{	
-			printf("%s>NÃÃÃÃÃÃÕOOOO VOCÊ IRÁ PAGAR POR ISSO!!! IRÁ PAGAR MUITO CARO!!!!\n\n", albeboss.name);
-			printf(" ->Muito bem!!! Você o derrotou!!!\n\n");
+			printf("%s> NÃÃÃÃÃÃÕOOOO VOCÊ IRÁ PAGAR POR ISSO!!! IRÁ PAGAR MUITO CARO!!!!\n\n", albeboss.name);
+			printf(" -Muito bem!!! Você o derrotou!!!\n\n");
 			pauseKey();	
 		}
 	}

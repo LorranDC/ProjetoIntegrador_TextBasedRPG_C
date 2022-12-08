@@ -3,7 +3,9 @@
 
 	void elfDialogue()
 	{
+		fseek(stdin,0,SEEK_END);
 		int i = 1;
+		int choice = 0;
 
 		printf("%s>Meu Deus... QUE CHEIRO HORRÍVEL\n\n", playerName);
 		sleep(2);		
@@ -46,10 +48,8 @@
 		pauseKey();
 		clearScreen();
 
-		while(i)
+		while(i = 1)
 		{
-			int choice;
-
 			printf("Sobre as operações de leitura e escrita de informações em arquivos, é correto afirmar que:\n\n");
 			printf("1-São operações que podem ser feitas independentemente da realização das operações de abertura e fechamento do arquivo.\n");
 			printf("2-Os dados gravados no arquivo são, antes, armazenados em uma área padrão, portanto, o comando de escrita não precisa referenciá-lo.\n");
@@ -61,11 +61,9 @@
 				i = -1;
 				break;
 			}
-			else
-			{
-				continue;
-			}
+				
 
+			choice = 0;
 			printf("A manipulação de dados em arquivos difere um pouco conforme o tipo de arquivo. Diante dessa afirmação, assinale a alternativa falsa.\n\n");
 			printf("1-Nos arquivos do tipo texto ou binário, após a execução de um comando de leitura ou de escrita, o apontador do arquivo se posiciona após o registro lido ou gravado.\n");
 			printf("2-A unidade básica de manipulação de arquivos de texto é o caractere.\n");
@@ -77,11 +75,9 @@
 				i = -1;
 				break;
 			}
-			else
-			{
-				continue;
-			}
-			
+				
+
+			choice = 0;
 			printf("Sobre a organização das informações em um arquivo, é correto afirmar que:\n\n");
 			printf("1-Arquivos do tipo binário são arquivos nos quais somente é possível fazer o acesso sequencial.\n");
 			printf("2-O acesso direto (randômico) significa que cada registro é acessado somente depois de acessar o anterior.\n");	
@@ -93,10 +89,8 @@
 				i = -1;
 				break;
 			}
-			else
-			{
-				continue;
-			}
+				
+		
 		break;
 			
 		}
